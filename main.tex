@@ -51,7 +51,7 @@
                                         %   split the title across lines,
                                         %   use another \listadd command for the
                                         %   second line
-\newcommand*\Author{Your Name}          %<Enter your name; must match official transcript
+\newcommand*\Author{Russell Jarvis}          %<Enter your name; must match official transcript
 \newcommand*{\documentname}%
   {Dissertation}                        %<Enter the type of document (capitalized)
 \newcommand*{\degreename}
@@ -60,9 +60,9 @@
                                         %   the oral defense
 \listadd{\committeechair}{Chair Name}   %<Enter committee chair name; use \listadd for
 %\listadd{\committeechair}{Another name}%   for additional names
-\newcommand*{\chairlabel}{Chair}        %<If you have co-chairs, replace this text with
+\newcommand*{\chairlabel}{Prof S Crook}        %<If you have co-chairs, replace this text with
                                         %   'Co-Chair'
-\listadd{\committeemember}{Member Name} %<Enter committee member names; use \listadd for
+\listadd{\committeemember}{Prof R Gerkin} %<Enter committee member names; use \listadd for
 \listadd{\committeemember}{Member Name} %   additional names
 \newcommand*{\gradmonth}{Month}         %<Enter the graduation date; month can only be:
                                         %  May, August, or December
@@ -725,7 +725,7 @@
 \newcommand{\macrocapwrap}[1]{%         % Use this macro to place other macros inside
   {\bgroup\bgroup{{#1}}\egroup\egroup}% %   captions, e.g., '\macrocapwrap{\ref{figure1}}'
 }%                                      % Note: Necessary due to the 'titlecaps' package
-                                        %   which modifies contents of captions
+                                        %   which modifies fcs of captions
 
 %%% Tables %%%
 %
@@ -907,107 +907,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
-Many sophisticated, experimentally informed models neurons and neuronal networks exist, yet, these models are limited to the target neuron class and brain region they were designed to explain. 
-
-A systematic, and thorough comparison of neuron model behavior, has not yet been performed, and it is unknown how differently classes of models behave with respect to one another. The NeuroML model database, NeuroML-DB, contains hundreds of biophysically realistic models of different cortical neurons (REF), including those of the Blue Brain Project (REF) and the Allen Brain Institute (Kuan 2015). The database also provides …
-
-
-SPECIFIC AIMS 
-
-Aim 1: Characterize region-specific differences of neuron-types in cortex.
-1A: We will analyze models of neuron-types from different cortical regions to characterize region-specific differences and the features underlying these differences. 
-1B: Using large, publicly available datasets for neuron classes, we will evaluate neuron-type models for agreement with data.
-
-Aim 2: Analyze existing network models that represent different cortical regions.
-2A: We will develop validation tests for comparing large-scale models to experimental data.
-2B: By comparing network models to multiunit recording counterparts, we will validate network behaviors and evaluate robustness.
-RESEARCH STRATEGY 
-•	Significance: we will provide a systematic means of evaluating organism against organism differences.
-
-•	Bootstrapping and imputing missing data (morphologies, natural input stimulus, synaptic densities)
-
-•	Model to model differencing, and model to data comparisons, might . 
-
-•	Although people do model to data disagreement checks, regardless, they do not necessarily perform this check in a standardized and repeatable way.
-
-APPROACH
-
-Often network models use synthetic morphologies, to make up for missing morphology reconstructions.
-
-o	This is where I mention previous work, in neuronunit and optimization on single cells.
-
-•	Regarding single neuron models.
-
-•	Regarding only network models, rather than building models from scratch, we intend to take models that exist, and merely modify, pre-existing models superficially, by only changing synapse properties, such as synapse density, and synapse density. and wiring properties, but not other neuron wiring ion channel properties.
-•	for example. 
-•	Speed of simulation convergence, versus relevance of results
-o	: PyNN, SpiNNaker, BrainScales, 
-•	Neuron models, that best represent computational tractability, to waveform flexibility.
-
-
-
-
-Specific Aim 1:
-Rationale
-
-•	Single Neuron, and neuron network Models are by necessity derived from incomplete data sources, and Mix and match models are ubiquitous.
-Preliminary Work:
-Experimental Design Model preparation: 
-Preliminary Work:
-Experimental Design Model preparation:
-Hypotheses, Experiments, Analysis, and Expected Outcomes: 
-A. Hypothesis: 
-Experiment:
-Analysis:
-Expected Outcome: 
-B. Hypothesis: 
-Experiment I: 
-Experiment II: 
-Expected Outcomes:
-C. Hypothesis:
-Experiment: 
-Analysis: 
-Expected Outcome:
-Potential Problems and Alternatives
-Specific Aim 2: Network
-Preliminary Work:
-Experimental Design
-EXPANDED BACKGROUND 
-Introduction
-
-
-
-
-
-
-Traub model, and many other models
-Copy headings over from Melissa’s draft
-
-Headings
-Specific Aims
-
-Aim 2: network to network tests
-model 2 model, model 2 data.
-Significance
-More modelling progress.
-
-The field will benefit from knowing if an V1 network can be reparameterized to act like a somatosensory network, or an A1 network.
-
-Innovation
-
-Using as a starting point, existing models, as proxies for new models.
-
-Is model 2 model difference bigger than model 2 data difference?
-
-What level of difference is tolerable?
-Approach
-
-Julia, Python
-Timeline.
-Backup approaches.
-
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Title page
@@ -1106,7 +1005,51 @@ Backup approaches.
 % Body
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \mainmatter
-%\include{chapter1}                     %<Insert your chapters here; I recommend to use
+
+
+\begin{figure}
+\includegraphics[width=\maxwidth{\textwidth}]{TSNE.png}
+\caption{Neigherset Neighbour Spatial Embedding}
+\label{figure\arabic{figurecounter}}
+\legend{\emph{Source}: \iftoggle{usebiblatex}{\textcite{krishnappa_adult_2012}}{\citet{krishnappa_adult_2012}}}% See: https://upload.wikimedia.org/wikipedia/commons/8/89/Antidorcas_marsupialis%2C_male_%28Etosha%2C_2012%29.jpg
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=\maxwidth{\textwidth}]{PCA.png}
+\caption{t-Distributed Nearest Neighbour Spatial Embedding}
+\label{figure\arabic{figurecounter}}
+\legend{ Three types of feature extraction}
+
+%\emph{Note}: Allen Brain SDK, Human Brain Feature Ephysiological Feature Extraction Library.}
+
+\end{figure}
+\chapter*{Results}
+\section{PCA and tSNE}
+
+\begin{figure}
+
+%[width=0.5\textwidth]
+%\maxwidth=0.9
+\includegraphics[width=\maxwidth{\textwidth},scale=0.5]{PCA.png}
+\caption{Principal Component Analysis}
+\label{figure\arabic{figurecounter}}
+\legend{Feature Variance distributed though-out a plane, the plane was output from applying dimension reduction to a high dimensional (552 dim) feature Space. The plane is related to two projection vectors that were  point in the directions of maximal variance in the data. Data is comprised by a collection of reduced neuronal models, and real recordings of voltage traces from neurons. Data and models are so different in this space that they are easily discriminated, and they fall into several natural clusters. Random Forests variance explained was later used to identify, dimensions that contributed the most variance.
+\emph{T-Distributed Stochastic Nearest Neighbour Spatial Embedding} }}
+
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=\maxwidth{\textwidth}]{TSNE.png}
+\caption{Neigherset Neighbour Spatial Embedding}
+\label{figure\arabic{figurecounter}}
+\legend{\emph{Source}: \iftoggle{usebiblatex}{\textcite{krishnappa_adult_2012}}{\citet{krishnappa_adult_2012}}}% See:
+\legend{\emph{Note}: Here is a note that is especially long to show what happens when it extends to more than one line.}
+\end{figure}
+
+
+\include{sample_chapter.tex}    
+
+%<Insert your chapters here; I recommend to use
 %\include{chapter2}                     %   \include rather than \input for chapters
 %\include{chapter3}% etc.
                                         % Heading commands (in descending order):
@@ -1212,5 +1155,8 @@ Backup approaches.
 %\input{biography}                       %<Enter the name of the .tex file containing your
                                         %   biography or omit this line and type in
                                         %   your biography here (1 paragraph)
+                                        
+                                        
+
 
 \end{document}
