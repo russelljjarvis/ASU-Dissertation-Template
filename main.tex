@@ -27,7 +27,7 @@
 \usepackage{graphicx}                   % For importing image files
 \usepackage{etoolbox}                   % For advanced commands throughout preamble
 \usepackage{microtype}                  %~Improves kerning and protrusion (optional);
-                                        %   See here for an introduction:
+                                        %   See here for an :
                                         %   http://www.khirevich.com/latex/microtype/
 
 \providetoggle{usemicrotype}            % TRUE = microtype is being used
@@ -45,9 +45,9 @@
 % Title page, input
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \listadd{\titlelines}%
-  {First Line of the Title}             %<Enter the title of the dissertation
+  {Data Driven Optimization of Reduced Neural Models}             %<Enter the title of the dissertation
 \listadd{\titlelines}%
-  {Second Line of the Title}            % If you want to
+  {With a Large Scale Analysis of Models and Data}            % If you want to
                                         %   split the title across lines,
                                         %   use another \listadd command for the
                                         %   second line
@@ -66,10 +66,10 @@
 \listadd{\committeemember}{Member Name} %   additional names
 \newcommand*{\gradmonth}{Month}         %<Enter the graduation date; month can only be:
                                         %  May, August, or December
-\newcommand*{\gradyear}{Year}           %<Enter the graduation year, e.g. 2014
+\newcommand*{\gradyear}{2020}           %<Enter the graduation year, e.g. 2014
 
-\listadd{\keywords}{keyword 1}          %<Enter keywords; use \listadd for
-\listadd{\keywords}{keyword 2}          %   additional names (up to 6)
+\listadd{\keywords}{Optimization}          %<Enter keywords; use \listadd for
+\listadd{\keywords}{Python, Neural Models}          %   additional names (up to 6)
 \newcommand*{\graddate}{\gradmonth%     % Compose full graduation date
   \space\gradyear}
 
@@ -931,11 +931,11 @@
                                         %   your abstract or omit this line and type in
                                         %   your abstract here.
 
-\chapter*{Dedication}                   %~Dedication is optional
+%\chapter*{Dedication}                   %~Dedication is optional
 %\clearpage                             %~If you don't wish to display the heading
                                         %   'Dedication', comment out the previous line
                                         %   and use this one instead.
-\input{sample_dedication}               %<Enter the name of the .tex file containing your
+%\input{sample_dedication}               %<Enter the name of the .tex file containing your
                                         %   your dedication or omit this line and type in
                                         %   your dedication here.
 
@@ -1007,22 +1007,13 @@
 \mainmatter
 
 
-\begin{figure}
-\includegraphics[width=\maxwidth{\textwidth}]{TSNE.png}
-\caption{Neigherset Neighbour Spatial Embedding}
-\label{figure\arabic{figurecounter}}
-\legend{\emph{Source}: \iftoggle{usebiblatex}{\textcite{krishnappa_adult_2012}}{\citet{krishnappa_adult_2012}}}% See: https://upload.wikimedia.org/wikipedia/commons/8/89/Antidorcas_marsupialis%2C_male_%28Etosha%2C_2012%29.jpg
-\end{figure}
 
-\begin{figure}
-\includegraphics[width=\maxwidth{\textwidth}]{PCA.png}
-\caption{t-Distributed Nearest Neighbour Spatial Embedding}
-\label{figure\arabic{figurecounter}}
-\legend{ Three types of feature extraction}
+\section{Further Validation of Optimized Models}
+Models can continue to undergo validation checks subsequent to optimiztion. One way to do this is to move from a single spiking stimulus regime, to a multispiking regime, and then use different feature extraction libraries using a much larger number of features. 
+The higher dimensional feature space can be reduced to a low dimensional space, where it is eaasier to discriminate between models and data.
 
-%\emph{Note}: Allen Brain SDK, Human Brain Feature Ephysiological Feature Extraction Library.}
+Agreement between the optimized.
 
-\end{figure}
 \chapter*{Results}
 \section{PCA and tSNE}
 
@@ -1038,9 +1029,11 @@
 
 \end{figure}
 
+
+
 \begin{figure}
 \includegraphics[width=\maxwidth{\textwidth}]{TSNE.png}
-\caption{Neigherset Neighbour Spatial Embedding}
+\caption{t distributed stochastic Neigherset Neighbour Spatial Embedding}
 \label{figure\arabic{figurecounter}}
 \legend{\emph{Source}: \iftoggle{usebiblatex}{\textcite{krishnappa_adult_2012}}{\citet{krishnappa_adult_2012}}}% See:
 \legend{\emph{Note}: Here is a note that is especially long to show what happens when it extends to more than one line.}
@@ -1049,6 +1042,7 @@
 
 \include{Optimization_of_existing_models_to_align_them_with_data.tex}\include{Optimization_of_models_to_find_diverse_solutions_for_the_same_behaviors.tex}        
 \include{Technical_details_of_optimizer.tex}
+\include{Verification_of_the_optimizer	.tex}
 %<Insert your chapters here; I recommend to use
 %\include{chapter2}                     %   \include rather than \input for chapters
 %\include{chapter3}% etc.
