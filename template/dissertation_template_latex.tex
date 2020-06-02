@@ -1,3 +1,4 @@
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % ASU Dissertation Template
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -27,7 +28,7 @@
 \usepackage{graphicx}                   % For importing image files
 \usepackage{etoolbox}                   % For advanced commands throughout preamble
 \usepackage{microtype}                  %~Improves kerning and protrusion (optional);
-                                        %   See here for an :
+                                        %   See here for an introduction:
                                         %   http://www.khirevich.com/latex/microtype/
 
 \providetoggle{usemicrotype}            % TRUE = microtype is being used
@@ -45,31 +46,31 @@
 % Title page, input
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \listadd{\titlelines}%
-  {Data Driven Optimization of Reduced Neural Models}             %<Enter the title of the dissertation
+  {First Line of the Title}             %<Enter the title of the dissertation
 \listadd{\titlelines}%
-  {With a Large Scale Analysis of Models and Data}            % If you want to
+  {Second Line of the Title}            % If you want to
                                         %   split the title across lines,
                                         %   use another \listadd command for the
                                         %   second line
-\newcommand*\Author{Russell Jarvis}          %<Enter your name; must match official transcript
+\newcommand*\Author{Your Name}                      %<Enter your name; must match official transcript
 \newcommand*{\documentname}%
   {Dissertation}                        %<Enter the type of document (capitalized)
 \newcommand*{\degreename}
   {Doctor of Philosophy}                %<Enter the type of degree (capitalized)
-\newcommand*\defdate{Month Year}        %<Give month (written out fully) and year of
+\newcommand*\defdate{Month Year}                       %<Give month (written out fully) and year of
                                         %   the oral defense
 \listadd{\committeechair}{Chair Name}   %<Enter committee chair name; use \listadd for
 %\listadd{\committeechair}{Another name}%   for additional names
-\newcommand*{\chairlabel}{Prof S Crook}        %<If you have co-chairs, replace this text with
+\newcommand*{\chairlabel}{Chair}        %<If you have co-chairs, replace this text with
                                         %   'Co-Chair'
-\listadd{\committeemember}{Prof R Gerkin} %<Enter committee member names; use \listadd for
+\listadd{\committeemember}{Member Name} %<Enter committee member names; use \listadd for
 \listadd{\committeemember}{Member Name} %   additional names
 \newcommand*{\gradmonth}{Month}         %<Enter the graduation date; month can only be:
                                         %  May, August, or December
-\newcommand*{\gradyear}{2020}           %<Enter the graduation year, e.g. 2014
+\newcommand*{\gradyear}{Year}           %<Enter the graduation year, e.g. 2014
 
-\listadd{\keywords}{Optimization}          %<Enter keywords; use \listadd for
-\listadd{\keywords}{Python, Neural Models}          %   additional names (up to 6)
+\listadd{\keywords}{keyword 1}          %<Enter keywords; use \listadd for
+\listadd{\keywords}{keyword 2}          %   additional names (up to 6)
 \newcommand*{\graddate}{\gradmonth%     % Compose full graduation date
   \space\gradyear}
 
@@ -406,6 +407,11 @@
 \renewcommand{\cftfigureaftersnumb}%    % Put table captions in List of Figures in title
   {\titlecap}%                          %   case
 
+\newcommand{\macrocapwrap}[1]{%         % Use this macro to place other macros inside
+  {\bgroup\bgroup{{#1}}\egroup\egroup}% %   captions, e.g., '\macrocapwrap{\ref{figure1}}'
+}%                                      % Note: Necessary due to the 'titlecaps' package
+                                        %   which modifies contents of captions
+
 \renewcommand*{\cftpartpagefont}%       % Use normal font for all page numbers
   {\normalfont}
 \renewcommand*{\cftchapterpagefont}%
@@ -722,11 +728,6 @@
   \renewcommand\@memback@floats{}
 \makeatletter
 
-\newcommand{\macrocapwrap}[1]{%         % Use this macro to place other macros inside
-  {\bgroup\bgroup{{#1}}\egroup\egroup}% %   captions, e.g., '\macrocapwrap{\ref{figure1}}'
-}%                                      % Note: Necessary due to the 'titlecaps' package
-                                        %   which modifies fcs of captions
-
 %%% Tables %%%
 %
 % Note: 'memoir' natively supports commands from the following table-related packages:
@@ -800,7 +801,7 @@
 \edef\theonelinetitle%
   {\onelinetitle}
 
-\renewcommand*{\do}[1]{{#1}\ }%          % Build keyword string to output to pdf document
+\renewcommand*{\do}[1]{{#1}\ }%         % Build keyword string to output to pdf document
 \newcommand*{\pdfkeywordsstring}{%
   \dolistloop{\keywords}%
 }
@@ -888,7 +889,7 @@
 % Sample settings
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \providetoggle{sample}                  % True = demonstration of template
-\settoggle{sample}{true}
+\settoggle{sample}{false}
 \iftoggle{sample}{%
   \newcounter{tablecounter}
   \setcounter{tablecounter}{1}
@@ -907,7 +908,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Title page
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -916,7 +916,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Copyright page
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\copyrightpageASU                       %~If you don't want to have a copyright page,
+\copyrightpageASU                       %~If you don't want to have a copyright page,
                                         %   comment out this line
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -927,20 +927,20 @@
 \frontmatter
 
 \chapter*{Abstract}                     % Abstract is required
-\input{template/sample_abstract}                 %<Enter the name of the .tex file containing your
+\input{sample_abstract}                 %<Enter the name of the .tex file containing your
                                         %   your abstract or omit this line and type in
                                         %   your abstract here.
 
-%\chapter*{Dedication}                   %~Dedication is optional
+\chapter*{Dedication}                   %~Dedication is optional
 %\clearpage                             %~If you don't wish to display the heading
                                         %   'Dedication', comment out the previous line
                                         %   and use this one instead.
-%\input{sample_dedication}               %<Enter the name of the .tex file containing your
+\input{sample_dedication}               %<Enter the name of the .tex file containing your
                                         %   your dedication or omit this line and type in
                                         %   your dedication here.
 
 \chapter*{Acknowledgments}              %~Acknowledgments are optional
-\input{template/sample_acknowledgments}          %<Enter the name of the .tex file containing your
+\input{sample_acknowledgments}          %<Enter the name of the .tex file containing your
                                         %   acknowledgments or omit this line and type in
                                         %   your acknowledgments here.
 
@@ -1005,45 +1005,7 @@
 % Body
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \mainmatter
-
-
-
-\section{Further Validation of Optimized Models}
-Models can continue to undergo validation checks subsequent to optimiztion. One way to do this is to move from a single spiking stimulus regime, to a multispiking regime, and then use different feature extraction libraries using a much larger number of features. 
-The higher dimensional feature space can be reduced to a low dimensional space, where it is eaasier to discriminate between models and data.
-
-Agreement between the optimized.
-
-\chapter*{Results}
-\section{PCA and tSNE}
-
-\begin{figure}
-
-%[width=0.5\textwidth]
-%\maxwidth=0.9
-\includegraphics[width=\maxwidth{\textwidth},scale=0.5]{template/PCA.png}
-\caption{Principal Component Analysis}
-\label{figure\arabic{figurecounter}}
-\legend{Feature Variance distributed though-out a plane, the plane was output from applying dimension reduction to a high dimensional (552 dim) feature Space. The plane is related to two projection vectors that were  point in the directions of maximal variance in the data. Data is comprised by a collection of reduced neuronal models, and real recordings of voltage traces from neurons. Data and models are so different in this space that they are easily discriminated, and they fall into several natural clusters. Random Forests variance explained was later used to identify, dimensions that contributed the most variance.
-\emph{T-Distributed Stochastic Nearest Neighbour Spatial Embedding} }
-
-\end{figure}
-
-
-
-\begin{figure}
-\includegraphics[width=\maxwidth{\textwidth}]{template/TSNE.png}
-\caption{t distributed stochastic Neigherset Neighbour Spatial Embedding}
-\label{figure\arabic{figurecounter}}
-\legend{\emph{Source}: \iftoggle{usebiblatex}{\textcite{krishnappa_adult_2012}}{\citet{krishnappa_adult_2012}}}% See:
-\legend{\emph{Note}: Here is a note that is especially long to show what happens when it extends to more than one line.}
-\end{figure}
-
-
-\include{template/Optimization_of_existing_models_to_align_them_with_data.tex}\include{Optimization_of_models_to_find_diverse_solutions_for_the_same_behaviors.tex}        
-\include{template/Technical_details_of_optimizer.tex}
-\include{template/Verification_of_the_optimizer.tex}
-%<Insert your chapters here; I recommend to use
+%\include{chapter1}                     %<Insert your chapters here; I recommend to use
 %\include{chapter2}                     %   \include rather than \input for chapters
 %\include{chapter3}% etc.
                                         % Heading commands (in descending order):
@@ -1053,9 +1015,6 @@ Agreement between the optimized.
                                         % \subsubsection
                                         % \paragraph
                                         % \subparagraph
-\iftoggle{sample}{%
-  \include{template/sample_chapter}%
-}{}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Back matter
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1133,9 +1092,6 @@ Agreement between the optimized.
 %\include{appendix2}                     %   \include rather than \input for appendices.
 %\include{appendix3}% etc.               %   All heading commands are the same as above,
                                          %   e.g., \chapter, \section, etc.
-\iftoggle{sample}{%
-  \include{template/sample_appendix}%
-}{}
 
 \backmatter                             % Start back matter according to documentclass
 \makeatletter                           % Do not clear page after printing title for
@@ -1149,8 +1105,5 @@ Agreement between the optimized.
 %\input{biography}                       %<Enter the name of the .tex file containing your
                                         %   biography or omit this line and type in
                                         %   your biography here (1 paragraph)
-                                        
-                                        
-
 
 \end{document}
