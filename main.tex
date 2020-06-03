@@ -7,6 +7,12 @@
                {memoir}
 \renewcommand{\cleardoublepage}%        % \cleardoublepage will create entirely blank
   {\clearpage}%                         %   pages depending on settings (e.g., usually
+                                        %   before start of \mainmatter); redefine it here
+                                        %   so that no entirely blank pages are created
+                                        %   automatically
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% (Some) Packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{graphicx}                   % For importing image files
 \usepackage{etoolbox}                   % For advanced commands throughout preamble
 \usepackage{microtype}                  %~Improves kerning and protrusion (optional);
@@ -993,6 +999,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \mainmatter
 
+\begin{comment}
 
 \subsection{1A}: Optimize reduced neuron models with respect to data from four different neuron types, using two different classes of models. Optimize neuron models to create agreement with electrophysiological measurements.
 \subsection{1B:} Validate the optimization approach using analysis of variance in many pre existing models and experimental data together. Test how well optimized models mimic experimental data relative to pre-existing models and data. 
@@ -1000,7 +1007,7 @@
 \subsection{2A:} Using large, publicly available datasets for neuron classes, we will characterize region-specific differences and evaluate neuron-type models for agreement with experimental data.
 \subsection{2B:} Using models of neuron-types from different cortical regions we will identify the features underlying differences among neuron types and across regions, as well as the biophysical mechanisms that underlie those features. 
 
-    
+\end{comment}
 
 
 
@@ -1043,6 +1050,13 @@ Model formats and simulation software: This project will rely on NeuroML, a comm
 Models can continue to undergo validation checks subsequent to optimiztion. One way to do this is to move from a single spiking stimulus regime, to a multispiking regime, and then use different feature extraction libraries using a much larger number of features.  The higher dimensional feature space can be reduced to a low dimensional space, where it is eaasier to discriminate between models and data.
 
 
+\section{Further Validation of Optimized Models}
+Models can continue to undergo validation checks subsequent to optimization. One way to do this is to move from a single spiking stimulus regime, to a multispiking regime, and then use different feature extraction libraries using a much larger number of features. 
+%Models can continue to undergo validation checks subsequent to optimization. One way to do this is to move from a single spiking stimulus regime, to a multispiking regime, and then use different feature extraction libraries using a much larger number of features. 
+%The higher dimensional feature space can be reduced to a low dimensional space, where it is eaasier to discriminate between models and data.
+
+%Agreement between the optimized.
+
 
 \chapter*{Results}
 \section{PCA and tSNE}
@@ -1051,7 +1065,8 @@ Models can continue to undergo validation checks subsequent to optimiztion. One 
 
 %[width=0.5\textwidth]
 %\maxwidth=0.9
-\includegraphics[width=\maxwidth{\textwidth}]{figures/PCA.png}
+\includegraphics[width=\maxwidth{\textwidth},scale=0.5]{template/PCA.png}
+\includegraphics[width=\maxwidth{\textwidth},scale=0.5]{template/PCA.png}
 \caption{Principal Component Analysis}
 \label{figure\arabic{figurecounter}}
 \legend{Feature Variance distributed though-out a plane, the plane was output from applying dimension reduction to a high dimensional (552 dim) feature Space. The plane is related to two projection vectors that were  point in the directions of maximal variance in the data. Data is comprised by a collection of reduced neuronal models, and real recordings of voltage traces from neurons. Data and models are so different in this space that they are easily discriminated, and they fall into several natural clusters. Random Forests variance explained was later used to identify, dimensions that contributed the most variance.
@@ -1064,9 +1079,12 @@ Models can continue to undergo validation checks subsequent to optimiztion. One 
 
 \begin{figure}
 \includegraphics[width=\maxwidth{\textwidth}]{figures/TSNE.png}
+\includegraphics[width=\maxwidth{\textwidth}]{template/TSNE.png}
 \caption{t distributed stochastic Neigherset Neighbour Spatial Embedding}
 \label{figure\arabic{figurecounter}}
 
+\legend{\emph{Source}: \iftoggle{usebiblatex}{\textcite{krishnappa_adult_2012}}{\citet{krishnappa_adult_2012}}}% See:
+\legend{\emph{Note}: Here is a note that is especially long to show what happens when it extends to more than one line.}
 \end{figure}
 
 
