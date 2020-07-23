@@ -1,11 +1,11 @@
 
 % Explanatory comment Name of section, above call to include.
-\include{}
+%\include{}
 \section{Introduction}
 
 \subsection{Model  Optimization with NeuronUnit}
-Some neural properties can’t be easily measured in experiments. These unknown properties hamper modeling accuracy and require parameter fitting. For example, a common approach for approximating unknown ion channel densities is to ‘optimize’ the governing equations to match known waveforms. The process of optimization involves what is known as an ‘inverse’ problem where we efficiently and sparsely search for the ‘optimal’ value of an parameter that satisfies the system of equations. Computational optimization techniques are generally specific to a particular type of problem rather than being generalized. However, several notable algorithms have solved a wide range of problems including non-dominated sort 2 (NSGA2) and stochastic gradient descent (SGD). The popularity of these two algorithms relies on the ability to avoid falsely reporting a local minimum as the most optimal solution. However, of SGD and NSGA2, only NSGA2 is a natural choice for tackling multi-objective optimization problems. Default implementations of SGD are not able to utilize the principle of non-domination as an optimization strategy.\newline
-\newline
+Some neural properties can’t be easily measured in experiments. These unknown properties hamper modeling accuracy and require parameter fitting. For example, a common approach for approximating unknown ion channel densities is to ‘optimize’ the governing equations to match known waveforms. The process of optimization involves what is known as an ‘inverse’ problem where we efficiently and sparsely search for the ‘optimal’ value of an parameter that satisfies the system of equations. Computational optimization techniques are generally specific to a particular type of problem rather than being generalized. However, several notable algorithms have solved a wide range of problems including non-dominated sort 2 (NSGA2) and stochastic gradient descent (SGD). The popularity of these two algorithms relies on the ability to avoid falsely reporting a local minimum as the most optimal solution. However, of SGD and NSGA2, only NSGA2 is a natural choice for tackling multi-objective optimization problems. Default implementations of SGD are not able to utilize the principle of non-domination as an optimization strategy.%%
+%%
 There is a great diversity of real biological neurons, all of which differ substantially in their electrical behavior. There are a few different classes of general purpose neuronal models, that can reproduce these different types of electrical behaviours, given appropriate parameterizations of the models.\newline
 \newline
 An exisiting class of neuron model type, called The Izhikevich model was published with parameter sets believed to make the model outputs accurately align with a variety of real biological cell outputs. However since publication much very specific electro physiological recordings have accumulated, that in someways undermine model/experiment agreement. However it is now possible to constrain the Izhikevich model and find new parameterizations that more allow us to more accurately reproduce more recently published experimental data.\newline
@@ -79,7 +79,7 @@ In the Izhivitch model many of nine model parameters demonstrated significant ef
 | olfactory bulb mitral cell | layer IV pyramidal neuron |
 | cerebellar purkinje cell | ca1 pyramidal cell |
 | HH model score | HH Model score |
-| 37.0 | [Phytochromobilin C15-Z,syn - C15-E,anti isomerization: concerted or stepwise?](https://www.researchgate.net/profile/Bo_Durbeej/publication/225093436_Phytochromobilin_C15-Zsyn_C15-Eanti_isomerization_Concerted_or_stepwise/links/0912f4fcd237e6701a000000.pdf) |
+
 \end{markdown}
 
 \begin{table*}
